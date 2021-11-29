@@ -43,7 +43,7 @@ Tabela 5 (povprecna starost: Povprečna starost osebnih avtomobilov po regijah):
 
 
 ##### Viri:
-* [Statistični urad Republike Slovenije] (https://pxweb.stat.si/SiStat/sl/Podrocja/Index/48/transport)
+* Statistični urad Republike Slovenije: https://pxweb.stat.si/SiStat/sl/Podrocja/Index/48/transport
 
 ## Program
 

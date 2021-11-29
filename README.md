@@ -10,6 +10,36 @@ Analiziral bom, katera prevozna sredstva ljudje uporabljajo in kako se to razlik
 
 Cilji moje proučitve bodo opažanje sprememb različnih prevoznih sredstve. Število umrlih, povprečni delež osebnih avtomobilov in povprečna starost le-teh skozi leta. Nekatere spremembe bodo prikazane glede na regije v Sloveniji.
 
+#### Tabele:
+Tabela 1 (potniski promet: Število potnikov v različnih prevoznih sredstvih):
+
+- 'Vrsta_prevoza' - spremenljivka: prevozno sredstvo
+- 'Leto' - spremenljivka: leto
+- 'Stevilo_potnikov' - meritev: število potnikov v 1000
+
+Tabela 2 (pogon in goriva: Število osebnih in specialnih avtomobilov glede na vrsto goriva in pogona):
+
+- 'Vrsta pogona' - spremenljivka: Vrsta pogona osebnih avtomobilov
+- 'Leto' - spremenljivka: leto
+- 'Stevilo_avtomobilov' - meritev: število avtomobilov v prometu
+
+Tabela 3 (preminuli: Število umrlih v cestoprometnih nesrečah na 10.000 registriranih motornih vozil po regijah):
+
+- 'Regija' - spremenljivka: regija
+- 'Leto' - spremenljivka: leto
+- 'Preminuli' - meritev: število umrlih na 10.000 registriranih motornih vozil
+
+Tabela 4 (osebni avtomobili: Število osebnih avtomobilov na 1000 prebivalcev po regijah):
+
+- 'Regija' - spremenljivka: regija
+- 'Leto' - spremenljivka: leto
+- 'Osebni_avtomobili' - meritev: število avtomobilov na 1000 prebivalcev
+
+Tabela 5 (povprecna starost: Povprečna starost osebnih avtomobilov po regijah):
+
+- 'Regija' - spremenljivka: regija
+- 'Leto' - spremenljivka: leto
+- 'Povprecna_starost_avtomobila' - meritev: povprečna starost avtomobila
 
 ## Program
 

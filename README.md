@@ -8,38 +8,38 @@ V svoji seminarski nalogi bom preučil nekatere ključne stvari cestnega prometa
 
 Analiziral bom, katera prevozna sredstva ljudje uporabljajo in kako se to razlikuje skozi daljše časovno obdobje. Poleg tega bom prikazal količinsko razliko uporabljenih cestnih vozil po regijah in tudi skozi leta, prav tako pa bom pogledal porast uporabe osebnih in specialnih avtomobilov na alternativne vire goriva v skrajnih letih. Podobno si bom prizadeval v najdbi povezave med povprečno starostjo osebnih avtomobilov in povprečno mesečno neto plačo po regijah ter preveriti to spremembo med plačo in starostjo osebnega avtomobila v nekem daljšem časovnem intervalu. Za nameček bom pogledal še, kako se spreminja število umrlih v cestnoprometnih nesrečah na 10.000 registriranih motornih vozil po posameznih regijah. Ob pomoči analize podatkov bom izsledil navezo med deležem potnikov in prometnih nesreč glede na uporabo določenih prevoznih sredstev.
 
-Cilji moje proučitve bodo opažanje sprememb različnih prevoznih sredstve. Število umrlih, povprečni delež osebnih avtomobilov in povprečna starost le-teh skozi leta. Nekatere spremembe bodo prikazane glede na regije v Sloveniji.
+Cilji moje proučitve bodo opažanje sprememb različnih prevoznih sredstev. Število umrlih, povprečni delež osebnih avtomobilov in povprečna starost le-teh skozi leta. Nekatere spremembe bodo prikazane glede na regije v Sloveniji.
 
 #### Tabele:
 Tabela 1 (potniski promet: Število potnikov v različnih prevoznih sredstvih):
 
-- 'Vrsta_prevoza' - spremenljivka: prevozno sredstvo
-- 'Leto' - spremenljivka: leto
-- 'Stevilo_potnikov' - meritev: število potnikov v 1000
+- `Vrsta_prevoza` - spremenljivka: prevozno sredstvo
+- `Leto` - spremenljivka: leto
+- `Stevilo_potnikov` - meritev: število potnikov v 1000
 
 Tabela 2 (pogon in goriva: Število osebnih in specialnih avtomobilov glede na vrsto goriva in pogona):
 
-- 'Vrsta pogona' - spremenljivka: Vrsta pogona osebnih avtomobilov
-- 'Leto' - spremenljivka: leto
-- 'Stevilo_avtomobilov' - meritev: število avtomobilov v prometu
+- `Vrsta pogona` - spremenljivka: Vrsta pogona osebnih avtomobilov
+- `Leto` - spremenljivka: leto
+- `Stevilo_avtomobilov` - meritev: število avtomobilov v prometu
 
 Tabela 3 (preminuli: Število umrlih v cestoprometnih nesrečah na 10.000 registriranih motornih vozil po regijah):
 
-- 'Regija' - spremenljivka: regija
-- 'Leto' - spremenljivka: leto
-- 'Preminuli' - meritev: število umrlih na 10.000 registriranih motornih vozil
+- `Regija` - spremenljivka: regija
+- `Leto` - spremenljivka: leto
+- `Preminuli` - meritev: število umrlih na 10.000 registriranih motornih vozil
 
 Tabela 4 (osebni avtomobili: Število osebnih avtomobilov na 1000 prebivalcev po regijah):
 
-- 'Regija' - spremenljivka: regija
-- 'Leto' - spremenljivka: leto
-- 'Osebni_avtomobili' - meritev: število avtomobilov na 1000 prebivalcev
+- `Regija` - spremenljivka: regija
+- `Leto` - spremenljivka: leto
+- `Osebni_avtomobili` - meritev: število avtomobilov na 1000 prebivalcev
 
 Tabela 5 (povprecna starost: Povprečna starost osebnih avtomobilov po regijah):
 
-- 'Regija' - spremenljivka: regija
-- 'Leto' - spremenljivka: leto
-- 'Povprecna_starost_avtomobila' - meritev: povprečna starost avtomobila
+- `Regija` - spremenljivka: regija
+- `Leto` - spremenljivka: leto
+- `Povprecna_starost_avtomobila` - meritev: povprečna starost avtomobila
 
 
 ##### Viri:

@@ -8,7 +8,7 @@ library(reshape2)
 sl <- locale("sl", decimal_mark=",", grouping_mark=".")
 
 
-#POTNIŠKI PREVOZ IN PROMET
+# POTNIŠKI PREVOZ IN PROMET
 potniski_promet <- read_csv2("podatki/Potniski_prevoz_in_promet.csv", col_names = c("Potniki(1000)", "Vrsta_prevoza", 2004:2020),
                              skip = 3, n_max = 8, na = "...",
                              locale=locale(encoding="Windows-1250"))
@@ -19,7 +19,7 @@ potniski_promet <- melt(potniski_promet, id.vars = "Vrsta_prevoza", measure.vars
                         na.rm = TRUE)
 
 
-#ŠTEVILO OSEBNIH IN SPECIALNIH AVTOMOBILOV GLEDE NA VRSTO GORICA IN POGONA
+# ŠTEVILO OSEBNIH IN SPECIALNIH AVTOMOBILOV GLEDE NA VRSTO GORICA IN POGONA
 pogon_in_goriva <- read_csv2("podatki/Prevozna_sredstva_glede_na_pogon_in_gorivo.csv", col_names = c("Leto", "Osebni_in_specialni_avtomobili", "Vrsta_pogona", "Stevilo_osebnih_in_specialnih_avtomobilov"),
                              skip = 4, n_max=36,
                              locale = locale(encoding = "Windows-1250"))
@@ -39,3 +39,50 @@ colnames(indeks) <- c("Vrsta_pogona", 2018:2020)
 
 indeks <- melt(indeks, id.vars = "Vrsta_pogona", measure.vars = names(indeks)[-1],
                variable.name = "Leto", value.name = "Indeks")
+
+
+# POVPREČNA MESEČNA NETO PLAČA PO REGIJAH
+neto_placa <- read_delim("podatki/Povprecna_mesecna_neto_placa_po_regijah.csv", delim = ";", col_names = c("Regija", 2008:2020),
+                         skip=3, n_max=12, locale = locale(encoding = "Windows-1250"))
+neto_placa$Regija <- gsub("Jugovzhodna Slovenija", "Jugovzhodna", neto_placa$Regija)
+
+neto_placa <- neto_placa[c(1,2,3,4,5,6,7,9,10,8,11,12),]
+neto_placa <- melt(neto_placa, id.vars = "Regija", measure.vars = names(neto_placa)[-1],
+                   variable.name = "Leto", value.name = "Neto_placa")
+
+neto_placa2020 <- filter(neto_placa, Leto == '2020')
+neto_placa2020 <- neto_placa2020[,-2]
+neto_placa2010 <- filter(neto_placa, Leto == '2010')
+neto_placa2010 <- neto_placa2010[,-1]
+
+
+
+# ŠTEVILO OSEBNIH AVTOMOBILOV NA 1000 PREBIVALCEV PO REGIJAH
+osebni_avtomobili <- read_delim("podatki/Stevilo_osebnih_avtomobilov_na_1000_prebivalcev.csv", delim = ";", col_names = c("nekaj", "Regija", 2004:2020),
+                                skip=3, n_max=12, locale = locale(encoding = "Windows-1250"))
+
+osebni_avtomobili <- osebni_avtomobili[,-1]
+osebni_avtomobili$Regija <- gsub("Jugovzhodna Slovenija", "Jugovzhodna", osebni_avtomobili$Regija)
+osebni_avtomobili$Regija <- gsub("Notranjsko-kraška", "Primorsko-notranjska", osebni_avtomobili$Regija)
+osebni_avtomobili$Regija <- gsub("Spodnjeposavska", "Posavska", osebni_avtomobili$Regija)
+
+osebni_avtomobili <- melt(osebni_avtomobili, id.vars = "Regija", measure.vars = names(osebni_avtomobili)[-1],
+                          variable.name = "Leto", value.name = "Osebni_avtomobili")
+
+osebni_avtomobili$Leto <- as.numeric(levels(osebni_avtomobili$Leto))[osebni_avtomobili$Leto]
+
+
+
+# POVPREČNA STAROST OSEBNEGA AVTOMOBILA PO REGIJAH
+povprecna_starost <- read_delim("podatki/Povprecna_starost_osebnih_avtomobilov.csv", delim=";", col_names = c("nekaj","Regija", 2004:2020),
+                                skip=3, n_max=12, locale = locale(encoding = "Windows-1250"))
+
+povprecna_starost <- povprecna_starost[,-1]
+povprecna_starost$Regija <- gsub("Jugovzhodna Slovenija", "Jugovzhodna", povprecna_starost$Regija)
+povprecna_starost$Regija <- gsub("Notranjsko-kraška", "Primorsko-notranjska", povprecna_starost$Regija)
+povprecna_starost$Regija <- gsub("Spodnjeposavska", "Posavska", povprecna_starost$Regija)
+
+povprecna_starost <- melt(povprecna_starost, id.vars = "Regija", measure.vars = names(povprecna_starost)[-1],
+                          variable.name = "Leto", value.name = "Povprecna_starost_avtomobila")
+
+povprecna_starost2020 <- filter(povprecna_starost, Leto == '2020')

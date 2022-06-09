@@ -57,6 +57,22 @@ neto_placa2010 <- neto_placa2010[,-1]
 
 
 
+# ŠTEVILO UMRLIH V CESTNOPROMETNIH NESREČAH NA 10.000 REGISTRIRANIH MOTORNIH VOZIL
+
+preminuli <- read_delim("podatki/Stevilo_umrlih_v_cestnoprometnih_nesrecah_na_10.000_registriranih_motornih_vozil.csv", delim=";", col_names = c("nekaj","Regija", 2004:2020),
+                        skip=3, n_max=12, locale = locale(encoding = "Windows-1250"))
+preminuli <- preminuli[,-1]
+preminuli$Regija <- gsub("Jugovzhodna Slovenija", "Jugovzhodna", preminuli$Regija)
+preminuli$Regija <- gsub("Spodnjeposavska", "Posavska", preminuli$Regija)
+preminuli$Regija <- gsub("Notranjsko-kraška", "Primorsko-notranjska", preminuli$Regija)
+
+
+preminuli <- melt(preminuli, id.vars = "Regija", measure.vars = names(preminuli)[-1],
+                  variable.name = "Leto", value.name = "Preminuli")
+preminuli$Leto <- as.numeric(levels(preminuli$Leto))[preminuli$Leto]
+
+
+
 # ŠTEVILO OSEBNIH AVTOMOBILOV NA 1000 PREBIVALCEV PO REGIJAH
 osebni_avtomobili <- read_delim("podatki/Stevilo_osebnih_avtomobilov_na_1000_prebivalcev.csv", delim = ";", col_names = c("nekaj", "Regija", 2004:2020),
                                 skip=3, n_max=12, locale = locale(encoding = "Windows-1250"))

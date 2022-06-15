@@ -4,8 +4,24 @@ library(gsubfn)
 library(tidyr)
 library(tmap)
 library(shiny)
-library(readr)
 library(tibble)
+
+#Paketi iz uvoza
+library(readr)
+library(tidyr)
+library(dplyr)
+library(reshape2)
+
+#Paketi iz vizualizacije
+library(ggplot2)
+library(ggvis)
+library(dplyr)
+library(rgdal)
+library(mosaic)
+library(maptools)
+library(ggmap)
+library(mapproj)
+library(munsell)
 
 options(gsubfn.engine="R")
 
